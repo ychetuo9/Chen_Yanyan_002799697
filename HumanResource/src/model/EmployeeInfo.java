@@ -118,4 +118,9 @@ public class EmployeeInfo {
         this.Photo = Photo;
     }
     
+    @Override
+    public String toString(){
+        return name;
+    }
+    
 }

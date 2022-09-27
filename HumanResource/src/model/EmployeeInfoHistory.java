@@ -30,4 +30,8 @@ public class EmployeeInfoHistory {
         history.add(newEmployee);
         return newEmployee;
     }
+    
+    public void deleteEmployee(EmployeeInfo ei){
+        history.remove(ei);
+    }
 }
