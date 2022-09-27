@@ -34,7 +34,6 @@ public class MainJFrame extends javax.swing.JFrame {
         splitPane = new javax.swing.JSplitPane();
         controlPanel = new javax.swing.JPanel();
         btnCreate = new javax.swing.JButton();
-        btnUpdate = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         workArea = new javax.swing.JPanel();
 
@@ -52,8 +51,6 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        btnUpdate.setText("Update Info");
-
         btnView.setText("View Info");
         btnView.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +65,6 @@ public class MainJFrame extends javax.swing.JFrame {
             .addGroup(controlPanelLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(controlPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -80,9 +76,7 @@ public class MainJFrame extends javax.swing.JFrame {
                 .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnView, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(392, Short.MAX_VALUE))
+                .addContainerGap(444, Short.MAX_VALUE))
         );
 
         splitPane.setLeftComponent(controlPanel);
@@ -165,7 +159,6 @@ public class MainJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnUpdate;
     private javax.swing.JButton btnView;
     private javax.swing.JPanel controlPanel;
     private javax.swing.JSplitPane splitPane;

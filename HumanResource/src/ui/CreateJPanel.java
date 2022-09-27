@@ -59,7 +59,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtPositionTitle = new javax.swing.JTextField();
         txtContactInfo = new javax.swing.JTextField();
         txtPhoneNumber = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
+        txtEmailAddress = new javax.swing.JTextField();
         txtPhoto = new javax.swing.JTextField();
         btnSave = new javax.swing.JButton();
 
@@ -142,7 +142,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                     .addComponent(txtStartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
                     .addComponent(txtTeamInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
                     .addComponent(txtContactInfo, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
+                    .addComponent(txtEmailAddress, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE)
                     .addComponent(txtName))
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -209,7 +209,7 @@ public class CreateJPanel extends javax.swing.JPanel {
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtEmail)
+                    .addComponent(txtEmailAddress)
                     .addComponent(lblPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPhoto))
                 .addGap(45, 45, 45)
@@ -239,7 +239,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         String positionTitle = txtPositionTitle.getText();
         String contactInfo = txtContactInfo.getText();
         String phoneNumber = txtPhoneNumber.getText();
-        String emailAddress = txtEmail.getText();
+        String emailAddress = txtEmailAddress.getText();
         String Photo = txtPhoto.getText();
         
         EmployeeInfo ei = history.addNewEmployee();
@@ -269,7 +269,7 @@ public class CreateJPanel extends javax.swing.JPanel {
         txtPositionTitle.setText("");
         txtContactInfo.setText("");
         txtPhoneNumber.setText("");
-        txtEmail.setText("");
+        txtEmailAddress.setText("");
         txtPhoto.setText("");
         
         
@@ -293,7 +293,7 @@ public class CreateJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel lblTitle;
     private javax.swing.JTextField txtAge;
     private javax.swing.JTextField txtContactInfo;
-    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtEmailAddress;
     private javax.swing.JTextField txtEmployeeID;
     private javax.swing.JTextField txtGender;
     private javax.swing.JTextField txtLevel;

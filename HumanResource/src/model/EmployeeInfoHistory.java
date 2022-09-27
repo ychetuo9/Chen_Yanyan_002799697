@@ -34,4 +34,12 @@ public class EmployeeInfoHistory {
     public void deleteEmployee(EmployeeInfo ei){
         history.remove(ei);
     }
+//////////////////////////////////////////////////////////////
+    public EmployeeInfo updateEmployee(EmployeeInfo ei){
+        EmployeeInfo changeEmployee = new EmployeeInfo();
+        history.add(changeEmployee);
+        history.remove(ei);
+        return changeEmployee;
+    }
+//////////////////////////////////////////////////////////////
 }
