@@ -6,6 +6,7 @@ package model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.RowFilter;
 import ui.ViewJPanel;
 
 /**
@@ -14,7 +15,6 @@ import ui.ViewJPanel;
  */
 public class EmployeeInfoHistory {
     private ArrayList<EmployeeInfo> history;
-    private List<EmployeeInfoHistory[]> data = new ArrayList<>();
     
     public EmployeeInfoHistory(){
         this.history = new ArrayList<EmployeeInfo>();
@@ -46,5 +46,14 @@ public class EmployeeInfoHistory {
     }
     
     
+    public ArrayList<EmployeeInfo> searchEmployeeByName(String str){
+        ArrayList<EmployeeInfo> result =new ArrayList<>(); 
+        for(EmployeeInfo i:history){
+            if(i.getName().equalsIgnoreCase(str)){
+                result.add(i);
+            }
+        }
+        return result;
+    }
     
 }

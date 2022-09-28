@@ -4,9 +4,11 @@
  */
 package ui;
 
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import model.EmployeeInfo;
 import model.EmployeeInfoHistory;
@@ -75,6 +77,8 @@ public class ViewJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        txtSearchName = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
 
         lblTitle.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -171,6 +175,11 @@ public class ViewJPanel extends javax.swing.JPanel {
 
         jLabel1.setText("Enter Search String");
 
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchActionPerformed(evt);
+            }
+        });
         txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtSearchKeyReleased(evt);
@@ -178,6 +187,14 @@ public class ViewJPanel extends javax.swing.JPanel {
         });
 
         jLabel2.setText("jLabel2");
+
+        txtSearchName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchNameActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("Name:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -192,6 +209,12 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(213, 213, 213)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addComponent(txtSearchName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72)
+                .addComponent(btnSearch)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(59, 59, 59)
@@ -236,9 +259,7 @@ public class ViewJPanel extends javax.swing.JPanel {
                                     .addComponent(txtPhoto, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addContainerGap(172, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(16, 16, 16)
-                                .addComponent(btnSearch)
-                                .addGap(34, 34, 34)
+                                .addGap(16, 216, Short.MAX_VALUE)
                                 .addComponent(btnUpdate)
                                 .addGap(198, 198, 198))))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -261,7 +282,10 @@ public class ViewJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtSearch))
+                    .addComponent(txtSearch)
+                    .addComponent(txtSearchName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnSearch)
+                    .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -311,12 +335,10 @@ public class ViewJPanel extends javax.swing.JPanel {
                     .addComponent(txtEmailAddress)
                     .addComponent(lblEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSearch)
-                    .addComponent(btnUpdate))
+                .addComponent(btnUpdate)
                 .addGap(127, 127, 127)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(482, 482, 482))
+                .addGap(640, 640, 640))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -427,14 +449,35 @@ public class ViewJPanel extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         // TODO add your handling code here:
+//        TableModel tableModel = new DefaultTableModel(history.searchEmployeeByName(txtName.getText()),);
+//        tblEmployee.setModel(tableModel);
+        String name = txtSearchName.getText();
+        ArrayList<EmployeeInfo> searched = new ArrayList<EmployeeInfo>();
+        searched = history.searchEmployeeByName(name);
+        if(searched.size() > 0) {
+            //refresh table
+            showTable(searched);
+        } else {
+            //display an error
+            JOptionPane.showMessageDialog(this,"No Employee information searched.");
+        }
+        
         
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void txtSearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyReleased
         // TODO add your handling code here:
         String searchString=txtSearch.getText();
-        searchEmployee(searchString);
+        simpleSearch(searchString);
     }//GEN-LAST:event_txtSearchKeyReleased
+
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void txtSearchNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchNameActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -444,6 +487,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnView;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblAge;
     private javax.swing.JLabel lblContactInfo;
@@ -470,6 +514,7 @@ public class ViewJPanel extends javax.swing.JPanel {
     private javax.swing.JTextField txtPhoto;
     private javax.swing.JTextField txtPositionTitle;
     private javax.swing.JTextField txtSearch;
+    private javax.swing.JTextField txtSearchName;
     private javax.swing.JTextField txtStartDate;
     private javax.swing.JTextField txtTeamInfo;
     // End of variables declaration//GEN-END:variables
@@ -498,10 +543,35 @@ public class ViewJPanel extends javax.swing.JPanel {
         }
     }
     
-    public void searchEmployee(String str){
+    private void showTable(ArrayList<EmployeeInfo> searched) {
+        DefaultTableModel model = (DefaultTableModel) tblEmployee.getModel();
+        model.setRowCount(0);
+        
+        for(EmployeeInfo ei :searched){
+            Object[] row = new Object[12];
+            row[0]=ei;
+            row[1]=ei.getEmployeeId();
+            row[2]=ei.getAge();
+            row[3]=ei.getGender();
+            row[4]=ei.getStartDate();
+            row[5]=ei.getLevel();
+            row[6]=ei.getTeamInfo();
+            row[7]=ei.getPositionTitle();
+            row[8]=ei.getContactInfo();
+            row[9]=ei.getPhoneNumber();
+            row[10]=ei.getEmailAddress();
+            row[11]=ei.getPhoto();
+            
+            model.addRow(row);
+        }
+    }
+    
+    public void simpleSearch(String str){
         DefaultTableModel model = (DefaultTableModel)tblEmployee.getModel();
         TableRowSorter<DefaultTableModel> trs =new TableRowSorter<>(model);
         tblEmployee.setRowSorter(trs);
         trs.setRowFilter(RowFilter.regexFilter(str));
     }
+    
+    
 }
