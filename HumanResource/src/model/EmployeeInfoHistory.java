@@ -5,6 +5,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
+import ui.ViewJPanel;
 
 /**
  *
@@ -12,6 +14,7 @@ import java.util.ArrayList;
  */
 public class EmployeeInfoHistory {
     private ArrayList<EmployeeInfo> history;
+    private List<EmployeeInfoHistory[]> data = new ArrayList<>();
     
     public EmployeeInfoHistory(){
         this.history = new ArrayList<EmployeeInfo>();
@@ -34,12 +37,14 @@ public class EmployeeInfoHistory {
     public void deleteEmployee(EmployeeInfo ei){
         history.remove(ei);
     }
-//////////////////////////////////////////////////////////////
+    
     public EmployeeInfo updateEmployee(EmployeeInfo ei){
-        EmployeeInfo changeEmployee = new EmployeeInfo();
-        history.add(changeEmployee);
+        EmployeeInfo updateEmployee = new EmployeeInfo();
+        history.add(updateEmployee);
         history.remove(ei);
-        return changeEmployee;
+        return updateEmployee;
     }
-//////////////////////////////////////////////////////////////
+    
+    
+    
 }
