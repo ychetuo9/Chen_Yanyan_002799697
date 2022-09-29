@@ -10,7 +10,7 @@ package model;
  */
 public class EmployeeInfo {
     private String name;
-    private int employeeId;
+    private String employeeId;
     private int age;
     private String gender;
     private String startDate;
@@ -20,7 +20,7 @@ public class EmployeeInfo {
     private String contactInfo;
     private String phoneNumber;
     private String emailAddress;
-    private String Photo;
+    private String photoPath;
 
     public String getName() {
         return name;
@@ -30,11 +30,11 @@ public class EmployeeInfo {
         this.name = name;
     }
 
-    public int getEmployeeId() {
+    public String getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -110,12 +110,12 @@ public class EmployeeInfo {
         this.emailAddress = emailAddress;
     }
 
-    public String getPhoto() {
-        return Photo;
+    public String getPhotoPath() {
+        return photoPath;
     }
 
-    public void setPhoto(String Photo) {
-        this.Photo = Photo;
+    public void setPhotoPath(String photoPath) {
+        this.photoPath = photoPath;
     }
     
     @Override

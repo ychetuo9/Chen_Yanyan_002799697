@@ -56,4 +56,14 @@ public class EmployeeInfoHistory {
         return result;
     }
     
+    public ArrayList<EmployeeInfo> searchEmployeeByID(String str){
+        ArrayList<EmployeeInfo> result =new ArrayList<>(); 
+        for(EmployeeInfo i:history){
+            if(i.getEmployeeId().equalsIgnoreCase(str)){
+                result.add(i);
+            }
+        }
+        return result;
+    }
+    
 }
