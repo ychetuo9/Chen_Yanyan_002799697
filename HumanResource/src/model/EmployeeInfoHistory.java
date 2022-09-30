@@ -66,4 +66,44 @@ public class EmployeeInfoHistory {
         return result;
     }
     
+    public ArrayList<EmployeeInfo> searchEmployeeByAge(String str){
+        ArrayList<EmployeeInfo> result =new ArrayList<>(); 
+        for(EmployeeInfo i:history){
+            if(i.getAge().equalsIgnoreCase(str)){
+                result.add(i);
+            }
+        }
+        return result;
+    }
+    
+    public ArrayList<EmployeeInfo> searchEmployeeByGender(String str){
+        ArrayList<EmployeeInfo> result =new ArrayList<>(); 
+        for(EmployeeInfo i:history){
+            if(i.getGender().equalsIgnoreCase(str)){
+                result.add(i);
+            }
+        }
+        return result;
+    }
+    
+    public ArrayList<EmployeeInfo> searchEmployeeByLevel(String str){
+        ArrayList<EmployeeInfo> result =new ArrayList<>(); 
+        for(EmployeeInfo i:history){
+            if(i.getLevel().equalsIgnoreCase(str)){
+                result.add(i);
+            }
+        }
+        return result;
+    }
+    
+    public ArrayList<EmployeeInfo> searchEmployeeByTeam(String str){
+        ArrayList<EmployeeInfo> result =new ArrayList<>(); 
+        for(EmployeeInfo i:history){
+            if(i.getTeamInfo().equalsIgnoreCase(str)){
+                result.add(i);
+            }
+        }
+        return result;
+    }
+    
 }
