@@ -100,7 +100,7 @@
                   </Group>
                   <Group type="102" attributes="0">
                       <Component id="jScrollPane2" min="-2" pref="1200" max="-2" attributes="0"/>
-                      <EmptySpace pref="45" max="32767" attributes="0"/>
+                      <EmptySpace pref="40" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -256,9 +256,9 @@
                           <Component id="txtTeamInfo" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblPositionTitle" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="txtPositionTitle" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtPositionTitle" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -286,18 +286,16 @@
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="lblPic" min="-2" pref="400" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btnDelete" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnUpdate" min="-2" pref="40" max="-2" attributes="0"/>
+                          <Component id="btnView" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="jScrollPane2" min="-2" pref="750" max="-2" attributes="0"/>
+                  <Component id="jScrollPane2" min="-2" pref="817" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnUpdate" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="btnDelete" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-                  </Group>
-                  <Component id="btnView" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

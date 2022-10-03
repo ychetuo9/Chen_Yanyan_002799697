@@ -53,7 +53,6 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="txtStartDate" pref="315" max="32767" attributes="0"/>
                                   <Component id="txtTeamInfo" pref="315" max="32767" attributes="0"/>
                                   <Component id="txtEmailAddress" pref="315" max="32767" attributes="0"/>
                                   <Component id="txtName" alignment="0" max="32767" attributes="0"/>
@@ -64,12 +63,8 @@
                           </Group>
                           <Component id="cbEmail" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="cbbAge" min="-2" max="-2" attributes="0"/>
+                          <Component id="dataChooser" min="-2" pref="315" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="lblPhoneNumber" min="-2" pref="122" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="txtPhoneNumber" min="-2" pref="315" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Component id="lblGender" min="-2" pref="122" max="-2" attributes="0"/>
@@ -80,6 +75,11 @@
                           <Component id="cbPhoneNumber" min="-2" max="-2" attributes="0"/>
                           <Component id="rbtnMale" min="-2" max="-2" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="lblPhoneNumber" min="-2" pref="122" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="txtPhoneNumber" min="-2" pref="315" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -121,9 +121,9 @@
                           <Component id="cbbAge" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblStartDate" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="txtStartDate" alignment="3" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="lblStartDate" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="dataChooser" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -265,8 +265,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="txtEmployeeID">
     </Component>
-    <Component class="javax.swing.JTextField" name="txtStartDate">
-    </Component>
     <Component class="javax.swing.JTextField" name="txtLevel">
     </Component>
     <Component class="javax.swing.JTextField" name="txtTeamInfo">
@@ -382,6 +380,8 @@
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="com.toedter.calendar.JDateChooser" name="dataChooser">
     </Component>
   </SubComponents>
 </Form>
